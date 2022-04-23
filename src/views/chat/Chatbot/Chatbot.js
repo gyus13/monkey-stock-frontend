@@ -37,7 +37,7 @@ function Chatbot() {
         }
         try {
             // I will send request to the textQuery ROUTE 
-            const response = await axios.post(`http://${window.location.hostname}:8000/api/dialogflow/textQuery`, textQueryVariables)
+            const response = await axios.post(`http://${window.location.hostname}:8082/api/dialogflow/textQuery`, textQueryVariables)
             const content = response.data.fulfillmentMessages[0]
 
                 conversation = {
@@ -69,7 +69,7 @@ function Chatbot() {
         }
         try {
             //I will send request to the textQuery ROUTE 
-            const response = await axios.post(`http://${window.location.hostname}:8000/api/dialogflow/eventQuery`, eventQueryVariables)
+            const response = await axios.post(`http://${window.location.hostname}:8082/api/dialogflow/eventQuery`, eventQueryVariables)
             let content = response.data.fulfillmentMessages[0]
             console.log(response);
                 let conversation = {
